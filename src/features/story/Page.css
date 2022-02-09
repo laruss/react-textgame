@@ -1,0 +1,27 @@
+.page {
+    padding: 5px 5px 5px 5px;
+    font-size: 16px;
+    flex: 1;
+    display: flex;
+    overflow: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.passage {
+    margin-left: 20em;
+    margin-top: 1em;
+    line-height: 2.5;
+    text-align: left;
+    white-space: pre-wrap;
+    word-break: break-word;
+    flex: 1;
+}
+
+.passage-element {
+    display: inline;
+}
+
+img {
+    max-width: 80%;
+}
