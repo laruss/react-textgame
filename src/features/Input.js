@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import PropTypes from 'prop-types';
 
 const Input = (props) => {
     const buttonName = props.button ? props.button : "Submit";
@@ -21,5 +22,7 @@ const Input = (props) => {
         </span>
     );
 };
+
+Input.propTypes = { button: PropTypes.string, callback: PropTypes.func };
 
 export default Input;

@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { setCurrentPassage } from "../projectSlice";
+import PropTypes from 'prop-types';
 
 const Link = (props) => {
     const dispatch = useDispatch();
@@ -17,5 +18,7 @@ const Link = (props) => {
 
     );
 };
+
+Link.propTypes = { to: PropTypes.string.isRequired, callback: PropTypes.func };
 
 export default Link;
