@@ -1,11 +1,12 @@
 import React from "react";
-import { registerPassages } from "../Utils";
-import {variables} from "../Utils";
-import Passage from "../features/Passage";
-import Link from "../features/Link";
-import V from "../features/V";
-import Image from "../features/Image";
-import images from "./images";
+import { registerPassages } from "../../Utils";
+import {variables} from "../../Utils";
+import Passage from "../../features/Passage";
+import Link from "../../features/Link";
+import Input from "../../features/Input";
+import V from "../../features/V";
+import Image from "../../features/Image";
+import images from "../images";
 
 const passageData = {
  passage1: <Passage>
@@ -19,7 +20,10 @@ const passageData = {
  </Passage>,
  passage2: <Passage>
   This is passage 2, if you want, but here's another variable ref: <V>myBrandNewVar</V>
-  <br/> But the way, if you go through this link, you will change this variable. You can check it on the passage 1.
+  <br/> This is sample of using input: <Input callback={value => alert(value)} button="Alert!"/>
+  <br/> After clicking on button you will see alert with input text.
+  <br/>
+  <br/> By the way, if you go through this link, you will change this variable. You can check it on the passage 1.
   <Link
       to="passage1"
       callback={() => {variables.myBrandNewVar += 1}}

@@ -6,9 +6,9 @@
 
 ### There are 5 .js files in it:
 
-### `./src/Story/01.js`
+### `./src/Story/stories/01.js`
 
-Sample story file, which you can create so many as you want.
+Sample story file, located in stories folder, which you can create so many as you want.
 <b>The main thing is to not forget to register them in</b> `./src/Story/storiesRegister.js`
 either way they won't be work.
 
@@ -32,7 +32,11 @@ File to contain your game variables. You can add there both single variables as 
 
 ## Commands:
 
-`npm start`
+### `npm install`
+
+Installs all requirements for project
+
+### `npm run story`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

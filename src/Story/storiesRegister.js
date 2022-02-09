@@ -1,1 +1,1 @@
-import "./01";
+import "./stories/01";
