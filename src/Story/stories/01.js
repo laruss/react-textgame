@@ -1,6 +1,5 @@
 import React from "react";
-import { registerPassages } from "../../Utils";
-import {variables} from "../../Utils";
+import { registerPassages, jumpTo, variables } from "../../Utils";
 import Passage from "../../features/Passage";
 import Link from "../../features/Link";
 import Input from "../../features/Input";
@@ -23,11 +22,15 @@ const passageData = {
   <br/> This is sample of using input: <Input callback={value => alert(value)} button="Alert!"/>
   <br/> After clicking on button you will see alert with input text.
   <br/>
-  <br/> By the way, if you go through this link, you will change this variable. You can check it on the passage 1.
+  <br/> By the way, if you go through this link, you will change this variable. You can check it back on the passage 1.
   <Link
-      to="passage1"
+      to="passage3"
       callback={() => {variables.myBrandNewVar += 1}}
-  >Go back to passage 1</Link>
+  >Go To Passage 3</Link>
+ </Passage>,
+ passage3: <Passage>
+  Here I will demonstrate you how 'jumpTo' works: <a href="#" onClick={() => jumpTo("passage1")}>Click Me</a>
+  <br/> You can use it, for example, in Input component.
  </Passage>
 }
 

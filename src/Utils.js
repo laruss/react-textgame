@@ -1,5 +1,6 @@
 import {store} from "./app/store";
 import isEqual from "lodash.isequal";
+import {setCurrentPassage} from "./projectSlice";
 
 export let passages = {};
 
@@ -31,4 +32,8 @@ export const variables = new Variables(store.getState().project.variables);
 
 export const registerPassages = (newPassages = {}) => {
     passages = {...passages, ...newPassages};
+};
+
+export const jumpTo = (passageName = "") => {
+    store.dispatch(setCurrentPassage(passageName));
 };
