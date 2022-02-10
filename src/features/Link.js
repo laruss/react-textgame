@@ -13,7 +13,7 @@ const Link = (props) => {
 
     return (
         <span>&nbsp;
-            <a href="#" onClick={onClick}>{props.children}</a>
+            <a className="game-link" href="#" onClick={onClick}>{props.children}</a>
         </span>
 
     );
