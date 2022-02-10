@@ -12,6 +12,7 @@ const Passage = (props) => {
                 return <div className="passage-element" key={key}>{element}</div>
             })}
             {props.children && typeof props.children === 'string' && <span>{props.children}</span>}
+            <br/><br/><br/>
         </div>
     )
 };

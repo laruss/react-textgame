@@ -24,7 +24,12 @@ For example, you have an image file "sample.jpg" with path `./src/images/samples
 
 
 ### `./src/Story/settings.js`
-Project settings.Here you can change start passage and name of the project.
+Project settings. Here you can change start passage and name of the project.
+Also there is "debug" variable. If you need to debug project and variables.
+
+If `true` variables and current passage won't be saved and will be changed to default after reloading the page
+
+If `false` variables will be stored and passages will be changed.
 
 _Please do not change initial object, you can add your key and values there, if you want_
 
@@ -60,3 +65,8 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+##KNOWN ISSUES:
+- If you save game variables as object and try to change object's properties, it will throw Frozen Error.
+To have ability to change game objects variables, try to use this statement:
+`() => { variables.game = {...variables.game, wasStarted: true}`

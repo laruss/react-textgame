@@ -22,6 +22,11 @@ export const getPreloadedState = () => {
         }
       }
     };
+  } else {
+    if (settings.project.debug) {
+      state.project.variables = variables;
+      state.project.passages.current = settings.passages.start;
+    }
   }
 
   return state;

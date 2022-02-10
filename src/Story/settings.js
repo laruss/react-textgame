@@ -3,7 +3,9 @@ const settings = {
         start: "passage1"
     },
     project: {
-        name: "React TextGame Engine"
+        name: "React TextGame Engine",
+        // if debug true => you will see initialized variables after reload page, else: variables will be stored
+        debug: false
     }
 }
 
