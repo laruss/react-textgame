@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 const Passage = (props) => {
+
+    useEffect(() => {
+        document.getElementById("page").scroll(0,0);
+    });
 
     return (
         <div className="passage">

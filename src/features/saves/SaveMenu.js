@@ -36,7 +36,7 @@ const SaveMenu = (props) => {
         const index = e.target.id;
         const data = saves.items[index].data;
         dispatch(loadState(data));
-        window.location.reload();
+        setTimeout(() => window.location.reload(), 1000);
     };
 
     const onDeleteClick = e => dispatch(deleteItem(e.target.id));
