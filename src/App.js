@@ -4,7 +4,8 @@ import {useSelector, useDispatch} from "react-redux";
 import Page from "./features/story/Page";
 import Menu from "./features/leftSideMenu/Menu";
 import Dialog from "./features/Dialog";
-import { passages, variables } from "./Utils";
+import variables from "./Story/variables";
+import { passages } from "./Utils";
 import { setVariables } from "./projectSlice";
 import "./Story/storiesRegister";
 
@@ -16,7 +17,7 @@ function App() {
 
     useEffect(() => {
         if (variables.areChanged()) {
-            dispatch(setVariables(variables.variables));
+            dispatch(setVariables(variables));
             variables.compile();
         }
     });

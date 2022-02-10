@@ -7,8 +7,8 @@ const Link = (props) => {
     const dispatch = useDispatch();
 
     const onClick = () => {
-        if (props.callback) props.callback();
         dispatch(setCurrentPassage(props.to));
+        if (props.callback) props.callback();
     };
 
     return (

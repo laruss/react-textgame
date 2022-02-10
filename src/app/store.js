@@ -16,13 +16,14 @@ export const getPreloadedState = () => {
           current: settings.passages.start,
           start: settings.passages.start
         },
-        variables,
+        variables: variables.getJSON(),
         dialog: {
           content: null
         }
       }
     };
   } else {
+    variables.update(state.project.variables);
     if (settings.project.debug) {
       state.project.variables = variables;
       state.project.passages.current = settings.passages.start;

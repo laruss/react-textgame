@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 import settings from "./Story/settings";
 
 const initialState = {
@@ -20,7 +20,7 @@ const projectSlice = createSlice({
             state.passages.current = action.payload;
         },
         setVariables(state, action) {
-            state.variables = action.payload;
+            state.variables = action.payload.getJSON();
         },
         setDialogContent(state, action) {
             state.dialog.content = action.payload;

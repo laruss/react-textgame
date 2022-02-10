@@ -1,6 +1,6 @@
 const settings = {
     passages: {
-        start: "passage1"
+        start: "01.passage1"
     },
     project: {
         name: "React TextGame Engine",

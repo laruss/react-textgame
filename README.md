@@ -65,8 +65,3 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## KNOWN ISSUES:
-- If you save game variables as object and try to change object's properties, it will throw Frozen Error.
-To have ability to change game objects variables, try to use this statement:
-`() => { variables.game = {...variables.game, wasStarted: true}`

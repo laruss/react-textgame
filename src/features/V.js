@@ -1,5 +1,5 @@
 import React from "react";
-import {variables} from "../Utils";
+import variables from "../Story/variables";
 import PropTypes from 'prop-types';
 
 /*
