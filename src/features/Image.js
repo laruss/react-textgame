@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Image = (props) => {
     return (
         <div>
-            <img src={props.src}/>
+            <img className="game-image" src={props.src}/>
         </div>
     );
 };

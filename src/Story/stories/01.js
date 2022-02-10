@@ -13,7 +13,7 @@ const passageData = {
   Here's some sample text, which you can edit in src/Story/01.js, here's sample of variables: <V>myBrandNewVar</V>
   <br/>This will be displayed as new line
   <br/> And this one too! By the way, here's image sample:
-  <Image src={images.samples.Sample}/>
+  <Image src={images.samples.sample}/>
   <br/> And here's a link sample:
   <Link to="passage2">Go to passage 2</Link>
  </Passage>,

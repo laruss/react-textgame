@@ -14,7 +14,14 @@ either way they won't be work.
 
 ### `./src/Story/images.js`
 
-File to register images there. Images are located in `./src/images` by default. But you can change directory if you want to.
+File for image registration.
+
+#### _Caution:_
+Images will be imported automatically from `./src/images` and all sub-folders. You can call an image by calling path to image after `images` folder.
+
+#### <b>E.G.:</b> 
+For example, you have an image file "sample.jpg" with path `./src/images/samples/sample.jpg`. You can call image in the game by code `images.samples.sample`
+
 
 ### `./src/Story/settings.js`
 Project settings.Here you can change start passage and name of the project.
