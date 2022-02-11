@@ -1,7 +1,10 @@
 import isEqual from "lodash.isequal";
 
 let variables = {
-    myBrandNewVar: 1
+    myBrandNewVar: 1,
+    speaker: {
+        color: "#010031"
+    }
 };
 
 

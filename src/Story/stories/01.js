@@ -5,6 +5,7 @@ import Passage from "../../features/Passage";
 import Link from "../../features/Link";
 import Input from "../../features/Input";
 import V from "../../features/V";
+import Say from "../../features/Say";
 import Image from "../../features/Image";
 import images from "../images";
 
@@ -30,8 +31,16 @@ const passageData = {
   >Go To Passage 3</Link>
  </Passage>,
  passage3: <Passage>
-  Here I will demonstrate you how 'jumpTo' works: <a href="#" onClick={() => jumpTo("01.passage1")}>Click Me</a>
+  Here I will demonstrate you how 'jumpTo' works: <a href="#" onClick={() => jumpTo("01.passage4")}>Click Me</a>
   <br/> You can use it, for example, in Input component.
+ </Passage>,
+ passage4: <Passage>
+  And here I will present you "Say" module.
+  If you have a character, who needs to speak with different color then default, you can add it to variables.
+  <br/>For example, here's will be dialog of speaker and random man:
+  <Say who={variables.speaker}>Hello, my friend!</Say>
+  <Say who="">Who are you? I don't know you.</Say>
+  <br/><Link to="01.passage1">Go back to passage1</Link>
  </Passage>
 }
 
