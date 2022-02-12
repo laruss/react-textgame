@@ -23,7 +23,12 @@
     display: inline;
 }
 
-.game-image {
+.passage img,
+.passage video {
+    display: block;
     max-width: 100%;
-    padding: 10px 0 10px 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
