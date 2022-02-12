@@ -4,9 +4,7 @@ const importAll = r => {
     return images
 };
 
-const regex = /\.(png|jpe?g|webp|webm|mp4|gif)$/
-
-const imagesFiles = importAll(require.context('../images', true, regex));
+const imagesFiles = importAll(require.context('../images', true, /\.(png|jpe?g|webp|webm|mp4|gif)$/));
 
 const getImagesObject = images => {
     const obj = {};
@@ -15,7 +13,7 @@ const getImagesObject = images => {
         let root = obj;
         folders.forEach(fName => {
             if (fName === folders.at(-1)) {
-                fName = fName.replace(regex, '')
+                fName = fName.replace(/\.(png|jpe?g|webp|webm|mp4|gif)$/, '')
                 root[fName] = image
             }
             else {
