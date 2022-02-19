@@ -1,8 +1,16 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
+import {CSSTransition} from "react-transition-group";
 
 const Passage = (props) => {
-
+    const [canBeShown, setCanBeShown] = useState(false);
     useEffect(() => document.getElementById("page").scroll(0,0));
+
+    useEffect(() => {
+        setCanBeShown(false);
+        setTimeout(() => {
+            setCanBeShown(true);
+        }, 100)
+    }, [props])
 
     const getContent = () => {
         if (props.children && typeof props.children === 'object' && !props.children.$$typeof)
@@ -16,10 +24,12 @@ const Passage = (props) => {
     };
 
     return (
-        <div className="passage">
-            {getContent()}
-            <br/><br/><br/>
-        </div>
+        <CSSTransition timeout={350} classNames="passage" in={canBeShown} unmountOnExit>
+            <div className="passage">
+                {canBeShown && getContent()}
+                <br/><br/><br/>
+            </div>
+        </CSSTransition>
     )
 };
 

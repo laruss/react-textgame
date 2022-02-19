@@ -7,7 +7,7 @@ import Dialog from "./features/Dialog";
 import variables from "./Story/variables";
 import { passages } from "./Utils";
 import { setVariables } from "./projectSlice";
-import "./Story/storiesRegister";
+import "./features/storiesRegister";
 
 import './App.css';
 

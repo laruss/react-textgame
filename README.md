@@ -4,12 +4,11 @@
 
 ### Main directory to work: `./src/Story`
 
-### There are 5 .js files in it:
+### There are 4 .js files in it:
 
 ### `./src/Story/stories/01.js`
 
 Sample story file, located in stories folder, which you can create so many as you want.
-<b>The main thing is to not forget to register them in</b> `./src/Story/storiesRegister.js`
 either way they won't be work.
 
 ### `./src/Story/images.js`
@@ -32,10 +31,6 @@ If `true` variables and current passage won't be saved and will be changed to de
 If `false` variables will be stored and passages will be changed.
 
 _Please do not change initial object, you can add your key and values there, if you want_
-
-### `./src/Story/storiesRegister.js`
-
-As it has been said, this file exists to tell game engine where game stories are.
 
 ### `./src/Story/variables.js`
 
