@@ -36,3 +36,15 @@
 .passage-enter {
     opacity: 0.01;
 }
+
+.passage-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
+}
+.passage-exit {
+    opacity: 1;
+}
+.passage-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+}

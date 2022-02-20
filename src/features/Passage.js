@@ -9,7 +9,7 @@ const Passage = (props) => {
         setCanBeShown(false);
         setTimeout(() => {
             setCanBeShown(true);
-        }, 100)
+        }, 50)
     }, [props])
 
     const getContent = () => {
