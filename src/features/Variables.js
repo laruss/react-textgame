@@ -1,5 +1,7 @@
 import isEqual from "lodash.isequal";
 
+const isArray = a => ((!!a) && (a.constructor === Array));
+
 class Variables {
     constructor(varsObject) {
         this.update = (varsObject) => {
@@ -22,13 +24,19 @@ class Variables {
         return !isEqual(newJSON, this.oldJSON);
     };
 
+    addNew(name, value) {
+        if (typeof value === "object" && !isArray(value))
+            this[name] = new Variables(value);
+        else
+            this[name] = value;
+    };
+
     compile() {
         this.oldJSON = this.getJSON();
     };
 
     getJSON() {
         const json = {};
-        const isArray = a => ((!!a) && (a.constructor === Array));
 
         for (const key of Object.keys(this)) {
             if (["oldJSON", "update", "areChanged", "compile"].includes(key)) continue;
