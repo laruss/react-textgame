@@ -15,14 +15,22 @@ const Dialog = () => {
     }
 
     const getContent = () => {
+        let content;
+        let style = {}
         if (dialog.content === "mainMenu")
-            return <div><MainMenu/></div>
+            content = <MainMenu/>;
         else if (dialog.content === "saveMenu")
-            return <div><SaveMenu action="save"/></div>
+            content = <SaveMenu action="save"/>;
         else if (dialog.content === "loadMenu")
-            return <div><SaveMenu action="load"/></div>
-        else
-            return <div/>
+            content = <SaveMenu action="load"/>;
+        else content = <div/>
+
+        return (
+            <div style={style}>
+                <button className="dialog-close-btn" onClick={close}>X</button>
+                {content}
+            </div>
+        )
     };
 
     return (

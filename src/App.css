@@ -67,3 +67,13 @@
 .save-item-wrapper .button:hover {
     color: #828282;
 }
+
+.dialog-close-btn {
+    position: absolute;
+    right: 1.5em;
+    top: 0.5em;
+    border-radius: 3em;
+    border: #828282 10px;
+    font-size: 200%;
+    font-weight: bold;
+}
