@@ -1,20 +1,25 @@
 .left-side-menu {
     background: black;
     color: aliceblue;
-    width: 15%;
     height: 100%;
-    padding: 5px 5px 5px 5px;
     min-height: 100%;
     text-align: center;
     line-height: 1.5;
     font-size: 120%;
+    overflow: auto;
 }
 
 .left-side-menu h1 {
     font-size: 1.5em;
 }
 
-.left-side-menu button {
+.side-menu-controls {
+    display: flex;
+    justify-content: flex-end;
+    color: #ffffff;
+}
+
+.story-menu button {
     background-color: #FFFFFF;
     border: 1px solid #222222;
     border-radius: 8px;
@@ -26,12 +31,9 @@
     font-size: 18px;
     font-weight: 600;
     line-height: 20px;
-    margin: 10px;
+    margin: 2em 1em;
     outline: none;
     padding: 13px 23px;
-    position: absolute;
-    bottom: 5px;
-    left: 1em;
     text-align: center;
     text-decoration: none;
     touch-action: manipulation;
@@ -59,3 +61,8 @@
     opacity: 1;
 }
 
+.left-side-menu img {
+    max-width: 17.5em;
+    width: 60%;
+    cursor: pointer;
+}
