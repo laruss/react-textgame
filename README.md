@@ -2,6 +2,8 @@
 
 React Text Game Engine is a powerful tool for creating interactive stories and games. It allows developers to create branching narratives and dynamic game mechanics using the popular React framework. The engine's intuitive point-and-click interface makes it easy to create complex and interactive elements without the need for extensive programming knowledge. Additionally, it provides a wide range of built-in features such as save and load functionality, modal-contents and other game components. Using this engine, developers can create engaging and immersive timely experiences for players while saving time and resources during the development process. With its flexibility and scalability, this engine is perfect for creating interactive fiction, visual novels, and other interactive content.
 
+## [demo link](https://laruss.github.io/react-textgame/)
+
 ## Commands:
 
 ### `npm install`
