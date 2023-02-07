@@ -1,12 +1,9 @@
-import Variables from "../features/Variables";
-
-let variables = {
-    myBrandNewVar: 1,
-    speaker: {
-        color: "#010031"
+const variables = {
+    someVar1: 0,
+    nestedVar: {
+        isTrue: 0,
+        clickedTimes: 0,
     }
-};
-
-variables = new Variables(variables);
+}
 
 export default variables;
