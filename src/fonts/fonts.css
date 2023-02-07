@@ -1,0 +1,19 @@
+@font-face {
+    font-family: KaushanScript-Regular;
+    src: url(KaushanScript-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Sora-Variable;
+    src: url(Sora-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: PathwayGothicOne;
+    src: url(PathwayGothicOne-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Urbanist;
+    src: url(Urbanist-VariableFont_wght.ttf) format("truetype");
+}
