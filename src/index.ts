@@ -1,7 +1,7 @@
 import GUtils from 'app/GUtils';
 import images from 'app/images';
 import { registerPassage } from 'app/passages';
-import GameSettings, { Settings } from 'app/settings';
+import settings, { Settings } from 'app/settings';
 import variables from 'app/variables';
 import GameVariables, { initGameVariables, Variables } from 'app/variables';
 import GameWrapper from 'components/GameWrapper';
@@ -13,7 +13,6 @@ import GSideBar, { GSideBarBottom, GSideBarHeader, GSideButton } from 'component
 import useGameChangesChecker from 'hooks/useGameChangesChecker';
 
 export {
-    GameSettings,
     GameVariables,
     GameWrapper,
     GModal,
@@ -27,6 +26,7 @@ export {
     images,
     initGameVariables,
     registerPassage,
+    settings,
     useGameChangesChecker,
     useModal,
     useModalSize,

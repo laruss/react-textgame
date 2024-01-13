@@ -1,10 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { GameState, UpdateAllPayload, UpdateVariablePayload } from 'app/redux/types';
+import settings from 'app/settings/settings.ts';
 
 const initialState: GameState = {
     variables: {},
     passages: {
-        current: '',
+        current: settings.passages?.start || '',
     },
 };
 

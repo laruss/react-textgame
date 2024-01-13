@@ -1,8 +1,6 @@
-import './init';
-
-import GameSettings from './GameSettings';
+import settings from './settings.ts';
 import Settings from './types';
 
-export default GameSettings;
+export default settings;
 
 export type { Settings };

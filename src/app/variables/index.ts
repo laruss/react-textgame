@@ -1,5 +1,5 @@
-import { systemImports } from 'app/imports/utils.ts';
 import store, { persistor } from 'app/redux/store.ts';
+import settings from 'app/settings';
 import { ActionCreators } from 'redux-undo';
 
 import { Variables } from './types.ts';
@@ -18,13 +18,12 @@ function baseInit(initialVariables: Variables) {
 }
 
 export function initGameVariables(initialVariables: Variables) {
-    systemImports.isDebug ?
+    settings.project?.debug ?
         baseInit(initialVariables) :
         persistor.subscribe(() => {
             const { bootstrapped } = persistor.getState();
             if (bootstrapped) baseInit(initialVariables);
         });
-    systemImports.variablesInitialized = true;
 }
 
 export default GameVariables as GameVariablesType;

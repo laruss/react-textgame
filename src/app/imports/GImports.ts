@@ -1,5 +1,7 @@
 import images from 'app/images';
 import { getImagesObject } from 'app/images/utils.ts';
+import settings from 'app/settings/settings.ts';
+import merge from 'ts-deepmerge';
 
 export type Imports = Record<string, () => unknown>;
 
@@ -27,6 +29,17 @@ type ImportsType = {
      *
      */
     importPassages: (passagesImports: Imports) => void;
+    /**
+     * Import settings from the game imports
+     *
+     * @param settingsImports The settings imports from the game imports, should be json file, imported by
+     * import.meta.glob with eager: true and as: 'raw'
+     * @returns void
+     *
+     * @example
+     * importSettings(import.meta.glob('/src/game/settings.json', {eager: true, as: 'raw'}));
+     */
+    importSettings: (settingsImports: Imports) => void;
 }
 
 const GImports: ImportsType = {
@@ -37,6 +50,12 @@ const GImports: ImportsType = {
     importPassages: (passagesImports) => {
         for (const passage of Object.values(passagesImports)) {
             passage();
+        }
+    },
+    importSettings: (settingsImports) => {
+        for (const content of Object.values(settingsImports)) {
+            const userSettings = JSON.parse(content as unknown as string);
+            Object.assign(settings, merge(settings, userSettings));
         }
     },
 };

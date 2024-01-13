@@ -1,0 +1,9 @@
+{
+    "project": {
+        "debug": false,
+        "showDebugComponent": true
+    },
+    "passages": {
+        "start": "test"
+    }
+}

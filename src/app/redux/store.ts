@@ -1,7 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 // @ts-expect-error can't find module
 import { GetDefaultMiddleware } from '@reduxjs/toolkit/dist/getDefaultMiddleware';
-import GameSettings from 'app/settings';
+import settings from 'app/settings/settings.ts';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { thunk } from 'redux-thunk';
@@ -12,9 +12,8 @@ import gameReducer from './slices/gameSlice';
 import savesReducer from './slices/savesSlice';
 import systemReducer from './slices/systemSlice';
 import { transformCircular, undoTransform } from './store-utils';
-import settingsMiddleware from './utils.ts';
 
-const debug = GameSettings.getInstance().get().project?.debug as boolean;
+const debug = settings.project?.debug as boolean;
 
 const reducersNames = {
     system: 'system',
@@ -72,9 +71,7 @@ const middleware = (getDefaultMiddleware: GetDefaultMiddleware) =>
         ignoredPaths: ['systemSlice.modal'],
         immutableCheck: false,
         serializableCheck: false,
-    })
-        .concat(settingsMiddleware)
-        .concat(thunk);
+    }).concat(thunk);
 
 const debugStore = configureStore({
     reducer: combineReducers({

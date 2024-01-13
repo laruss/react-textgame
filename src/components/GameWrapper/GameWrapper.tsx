@@ -1,6 +1,6 @@
 import { Theme } from '@mui/material';
 import store, { persistor } from 'app/redux/store.ts';
-import GameSettings from 'app/settings';
+import settings from 'app/settings/settings.ts';
 import Debug from 'components/Debug';
 import FullScreenWrapper from 'components/FullScreenWrapper.tsx';
 import GModal, { GChoiceModal } from 'components/GModal';
@@ -18,8 +18,6 @@ interface GameWrapperProps {
     Spinner?: FunctionComponent<void>;
     theme?: Theme;
 }
-
-const settings = GameSettings.getInstance().get();
 
 const GameWrapper = ({ Spinner, children, ...styleWrapperProps }: GameWrapperProps) => {
     const debug = useMemo(() => settings.project?.debug as boolean, []);

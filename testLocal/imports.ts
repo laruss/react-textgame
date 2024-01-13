@@ -1,7 +1,7 @@
-import { GImports } from '../src';
+import GImports from '../src/imports';
 
 // @ts-ignore
-const settings = import.meta.glob('/testLocal/settings.ts', { eager: true });
+GImports.importSettings(import.meta.glob('/testLocal/settings.json', { eager: true, as: 'raw' }));
 
 // @ts-ignore
 GImports.importImages(import.meta.glob('/testLocal/game/media/**/*', { eager: true }), '/testLocal/game/media/');

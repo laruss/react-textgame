@@ -1,9 +1,7 @@
 import {GlobalStyles as MuiGlobalStyles} from "@mui/material";
-import GameSettings from 'app/settings';
+import settings from 'app/settings/settings.ts';
 
 import Fonts from "./Headers";
-
-const settings = GameSettings.getInstance().get();
 
 const GlobalStyles = () => {
     return (

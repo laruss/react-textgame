@@ -1,6 +1,6 @@
 import { Fade } from '@mui/material';
 import render from 'app/passages/render.tsx';
-import GameSettings from 'app/settings';
+import settings from 'app/settings/settings.ts';
 import GPassage from 'components/GPassage';
 import useWindowSize from 'hooks/useWindowSize';
 import { useRef } from 'react';
@@ -10,7 +10,7 @@ import PageWrapper from './PageWrapper.ts';
 import { NodeRef } from './types.ts';
 import usePassageChanged from './usePassageChanged.ts';
 
-let timeout = GameSettings.getInstance().get().defaults?.transitionTimeout;
+let timeout = settings.defaults?.transitionTimeout;
 
 const GPage = () => {
     const { height } = useWindowSize();

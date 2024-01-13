@@ -1,6 +1,6 @@
 import { updateVariable } from 'app/redux/slices/gameSlice';
 import store, { RootState } from 'app/redux/store';
-import GameSettings from 'app/settings';
+import settings from 'app/settings/settings.ts';
 
 import { Variables } from './types.ts';
 
@@ -20,7 +20,7 @@ function select<T>({ state, path }: SelectProps): T {
     return current as T;
 }
 
-const debug = GameSettings.getInstance().get().project?.debug as boolean;
+const debug = settings.project?.debug as boolean;
 
 const isObject = (a: any) => {
     const isArray = (a_: any) => !!a_ && a_.constructor === Array;
@@ -42,7 +42,7 @@ export function mergeObjects(initiator: Variables, receiver: Variables): void {
     });
 }
 
-export const getProxy = (path: string): Variables =>
+export const getProxy = (path: string): Variables => (
     new Proxy(
         {},
         {
@@ -69,4 +69,5 @@ export const getProxy = (path: string): Variables =>
                 return select({ state: store.getState(), path }) as object | null;
             },
         },
-    );
+    )
+);

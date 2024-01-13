@@ -1,6 +1,6 @@
 import { css, styled } from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2';
-import GameSettings from 'app/settings';
+import settings from 'app/settings/settings.ts';
 import { PassageWidth } from 'components/GPassage/types.ts';
 import { ReactNode } from 'react';
 
@@ -9,8 +9,6 @@ type PassageContentProps = {
     children?: ReactNode;
     className?: string;
 };
-
-const settings = GameSettings.getInstance().get();
 
 const PassageGrid = styled(Grid2, {
     shouldForwardProp: (prop) => prop !== 'width',

@@ -1,12 +1,10 @@
-import GameSettings from 'app/settings';
+import settings from 'app/settings/settings.ts';
 import CryptoJS from 'crypto-js';
 
 const ifid = {
     ifid: "",
     name: ""
 };
-
-const settings = GameSettings.getInstance().get();
 
 export const getDate = (datetime: number) => {
     const dt = new Date(datetime);

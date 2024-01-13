@@ -3,7 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { useTheme } from '@mui/material/styles';
 import { useAppSelector } from 'app/redux/hooks';
 import { selectSideMenuIsOpened } from 'app/redux/slices/systemSlice';
-import GameSettings from 'app/settings';
+import settings from 'app/settings/settings.ts';
 import { ReactNode } from 'react';
 
 import {
@@ -29,8 +29,6 @@ interface GSideBarProps {
     children?: ReactNode;
     side?: 'left';
 }
-
-const settings = GameSettings.getInstance().get();
 
 const GSideBar = ({ children }: GSideBarProps) => {
     let open = useAppSelector(selectSideMenuIsOpened) as boolean;
