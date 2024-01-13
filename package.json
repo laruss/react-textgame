@@ -1,7 +1,7 @@
 {
     "name": "react-textgame-engine",
     "private": false,
-    "version": "0.3.0",
+    "version": "0.3.1",
     "type": "module",
     "main": "dist/index.umd.js",
     "module": "dist/index.es.js",
@@ -13,6 +13,12 @@
             "types": "./dist/index.d.ts"
         }
     },
+    "author": "laruss",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/laruss/react-textgame.git"
+    },
+    "license": "MIT",
     "files": [
         "dist",
         "dist/scripts"

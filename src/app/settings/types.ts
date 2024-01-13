@@ -8,6 +8,7 @@
  *  if false, saves game state to session, else doesn't save state
  *  ! DO NOT FORGET TO SWITCH THIS OFF WHEN GAME IS READY FOR PRODUCTION !
  * @property {boolean} debug - debug mode
+ * @property {boolean} showDebugComponent - show debug component
  *
  */
 export interface Project {
@@ -15,6 +16,7 @@ export interface Project {
     version?: string;
     author?: string;
     debug?: boolean;
+    showDebugComponent?: boolean;
 }
 
 /**

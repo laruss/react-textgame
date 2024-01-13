@@ -1,6 +1,7 @@
 import { Theme } from '@mui/material';
 import store, { persistor } from 'app/redux/store.ts';
 import GameSettings from 'app/settings';
+import Debug from 'components/Debug';
 import FullScreenWrapper from 'components/FullScreenWrapper.tsx';
 import GModal, { GChoiceModal } from 'components/GModal';
 import GNotification from 'components/GNotification';
@@ -20,8 +21,9 @@ interface GameWrapperProps {
 
 const settings = GameSettings.getInstance().get();
 
-const GameWrapper = ({Spinner, children, ...styleWrapperProps}: GameWrapperProps) => {
+const GameWrapper = ({ Spinner, children, ...styleWrapperProps }: GameWrapperProps) => {
     const debug = useMemo(() => settings.project?.debug as boolean, []);
+    const showDebugComponent = useMemo(() => settings.project?.showDebugComponent as boolean, []);
 
     const SpinnerComponent = useMemo(
         () => Spinner || GSpinner,
@@ -33,6 +35,7 @@ const GameWrapper = ({Spinner, children, ...styleWrapperProps}: GameWrapperProps
                 <SpinnerComponent />
                 <AppContainer className="App">
                     <GModal />
+                    {showDebugComponent && <Debug />}
                     <GChoiceModal />
                     <GNotification />
                     {children}

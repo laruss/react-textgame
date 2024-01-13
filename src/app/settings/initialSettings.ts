@@ -6,6 +6,7 @@ const initialSettings: Settings = {
         version: '0.2.0 beta',
         author: 'laruss',
         debug: true,
+        showDebugComponent: false,
     },
     sidebar: {
         alwaysHide: false,
