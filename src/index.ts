@@ -1,6 +1,5 @@
 import GUtils from 'app/GUtils';
 import images from 'app/images';
-import GImports from 'app/imports';
 import { registerPassage } from 'app/passages';
 import GameSettings, { Settings } from 'app/settings';
 import variables from 'app/variables';
@@ -17,7 +16,6 @@ export {
     GameSettings,
     GameVariables,
     GameWrapper,
-    GImports,
     GModal,
     GPage,
     GPassage,

@@ -12,7 +12,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "declaration": true,
-    "typeRoots": ["./dist/index.d.ts"],
+    "typeRoots": ["./dist/index.d.ts", "./dist/imports.d.ts"],
     "noEmit": true,
     "jsx": "react-jsx",
 

@@ -11,9 +11,9 @@ export default defineConfig({
     ],
     build: {
         lib: {
-            entry: path.resolve(__dirname, 'src/index.ts'),
-            name: 'my-super-test-button',
-            fileName: (format) => `index.${format}.js`,
+            entry: [path.resolve(__dirname, 'src/index.ts'), path.resolve(__dirname, 'src/imports.ts')],
+            name: 'react-textgame-engine',
+            fileName: (format, entryName) => `${entryName}.${format}.js`,
         },
         rollupOptions: {
             external: ['react', 'react-dom'],
@@ -48,6 +48,7 @@ export default defineConfig({
     resolve: {
         alias: {
             'app': path.resolve(__dirname, './src/app'),
+            'imports': path.resolve(__dirname, './src/imports.ts'),
             'styles': path.resolve(__dirname, './src/styles'),
             'hooks': path.resolve(__dirname, './src/hooks'),
             'components': path.resolve(__dirname, './src/components'),
