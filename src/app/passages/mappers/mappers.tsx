@@ -6,7 +6,7 @@ import { GImage } from 'react-textgame-components';
 import { BodyComponent, HeaderComponent, Mapper, MapperFunction } from '../types.ts';
 
 const headerMapper = (content: HeaderComponent, index: string | number) => (
-    <Typography key={index} variant={content.component}>{content.component}</Typography>
+    <Typography key={index} variant={content.component}>{content.content}</Typography>
 );
 
 const mappers: Mapper = {
