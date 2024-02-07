@@ -4,11 +4,11 @@ import settings from 'app/settings/settings.ts';
 import Debug from 'components/Debug';
 import FullScreenWrapper from 'components/FullScreenWrapper.tsx';
 import GModal, { GChoiceModal } from 'components/GModal';
-import GNotification from 'components/GNotification';
 import GSpinner from 'components/GSpinner';
 import StyleWrapper from 'components/StyleWrapper.tsx';
 import { FunctionComponent, ReactNode, useMemo } from 'react';
 import { Provider } from 'react-redux';
+import { GNotificationContainer } from 'react-textgame-components';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import AppContainer from './AppContainer.tsx';
@@ -35,8 +35,8 @@ const GameWrapper = ({ Spinner, children, ...styleWrapperProps }: GameWrapperPro
                     <GModal />
                     {showDebugComponent && <Debug />}
                     <GChoiceModal />
-                    <GNotification />
                     {children}
+                    <GNotificationContainer />
                 </AppContainer>
             </FullScreenWrapper>
         </StyleWrapper>

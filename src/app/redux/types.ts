@@ -1,5 +1,3 @@
-import { AlertColor } from '@mui/material/Alert/Alert';
-import { SnackbarOrigin } from '@mui/material/Snackbar/Snackbar';
 import { Variables } from 'app/variables';
 import { ReactNode } from 'react';
 
@@ -53,7 +51,7 @@ export interface ModalProps {
 }
 
 export interface ModalType extends ModalProps {
-    size: {width?: number, height?: number};
+    size: { width?: number, height?: number };
 }
 
 export type ChoiceModalType = {
@@ -67,16 +65,10 @@ export type SpinnerType = {
     zIndex?: number;
 };
 
-export interface NotificationType {
-    content: ReactNode;
-    severity?: AlertColor;
-    anchorOrigin?: SnackbarOrigin;
-};
 
 export type SystemState = {
     modal: ModalType,
     choiceModal: ChoiceModalType;
-    notification: NotificationType;
     sideMenuIsOpened: null | boolean;
     isFullScreen: boolean;
     spinner: SpinnerType;

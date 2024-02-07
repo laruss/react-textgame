@@ -12,6 +12,7 @@ export type Component =
     | 'meta'
     | 'choose'
     | 'custom'
+    | 'goTo'
     | 'image'
     | 'link'
     | 'markdown'
@@ -47,6 +48,25 @@ export interface ChooseComponent extends BaseComponent {
     components: BodyComponent[];
 }
 
+/**
+ * GoToComponent is a component that allows developer to jump to another passage.
+ *
+ * @property {Component} component - The component type, always 'goTo'.
+ * @property {string | () => string} goTo - The id of the passage to jump to.
+ *
+ * @example
+ * {
+ *    component: 'goTo',
+ *    goTo: 'passageId'
+ *    // or
+ *    goTo: () => 'passageId'
+ * }
+ */
+export interface GoToComponent extends BaseComponent {
+    component: 'goTo';
+    goTo: string | (() => string);
+}
+
 export interface MetaComponent extends BaseComponent {
     component: 'meta';
     name: string;
@@ -78,6 +98,7 @@ export interface LinkComponent extends BaseComponent {
 
 export type BodyComponent =
     | ChooseComponent
+    | GoToComponent
     | CustomComponent
     | HeaderComponent
     | ImageComponent
@@ -92,6 +113,7 @@ export type PassageObject = [
 export type ComponentTypeMap = {
     choose: ChooseComponent;
     custom: CustomComponent;
+    goTo: GoToComponent;
     image: ImageComponent;
     link: LinkComponent;
     markdown: MarkdownComponent;

@@ -1,9 +1,9 @@
 import { selectGame, useAppDispatch, useAppSelector } from 'app/redux/hooks.ts';
 import { isSuccess, updateSlot } from 'app/redux/slices/savesSlice.ts';
 import { useChoiceModal } from 'components/GModal';
-import { useNotification } from 'components/GNotification';
 import { useSpinner } from 'components/GSpinner';
 import { useCallback } from 'react';
+import { useNotification } from 'react-textgame-components';
 
 type UseOnSaveProps = {
     index: number;
@@ -17,10 +17,7 @@ const useOnSave = ({ index }: UseOnSaveProps) => {
     const { showSpinner } = useSpinner();
     const saveToSlot = () => dispatch(updateSlot({ index, data: game.present, datetime: Date.now() }));
 
-    const { handleNotification: handleSuccessSaveNotification } = useNotification({
-        content: 'successfully saved',
-        severity: 'success',
-    });
+    const {notify} = useNotification();
 
     const { handleModalOpen: handleSaveGame } = useChoiceModal({
         primary: 'Are you sure?',
@@ -30,7 +27,7 @@ const useOnSave = ({ index }: UseOnSaveProps) => {
                 showSpinner(true);
                 saveToSlot();
                 succeed();
-                handleSuccessSaveNotification();
+                notify('successfully saved');
                 showSpinner(false);
             },
             no: () => null,

@@ -1,11 +1,10 @@
 import DownloadIcon from '@mui/icons-material/Download';
 import UploadIcon from '@mui/icons-material/Upload';
-import { useNotification } from 'components/GNotification';
 import { useSpinner } from 'components/GSpinner';
 import { RC4, SHA3 } from 'crypto-js';
 import CryptoJS from 'crypto-js';
 import { ChangeEvent, RefObject, useMemo, useRef } from 'react';
-import { GIcon } from 'react-textgame-components';
+import { GIcon, useNotification } from 'react-textgame-components';
 
 import { convertWordArrayToUint8Array, download, fileFormat, getEncryptKey, getFileName } from './utils';
 
@@ -20,15 +19,7 @@ const FilesHandler = () => {
     const pass = useMemo(() => SHA3(encryptKey), [encryptKey]);
     const { showSpinner } = useSpinner();
 
-    const { handleNotification: handleErrorNotification } = useNotification({
-        content: 'Something went wrong 😢, check console for details.',
-        severity: 'error',
-    });
-
-    const { handleNotification: handleLoadErrorNotification } = useNotification({
-        content: 'It seems like save file is from another game or corrupted 😢',
-        severity: 'error',
-    });
+    const { notify } = useNotification();
 
     const onDownloadClick = async () => {
         showSpinner(true);
@@ -49,7 +40,7 @@ const FilesHandler = () => {
             };
             reader.readAsArrayBuffer(file);
         } catch (e) {
-            handleErrorNotification();
+            notify('Something went wrong 😢, check console for details.');
             console.warn(e);
         }
         showSpinner(false);
@@ -78,7 +69,7 @@ const FilesHandler = () => {
                 localStorage.setItem(persistKey, objectAsString);
                 window.location.reload();
             } catch (error) {
-                handleLoadErrorNotification();
+                notify('It seems like save file is from another game or corrupted 😢');
                 console.warn(e);
             }
         };

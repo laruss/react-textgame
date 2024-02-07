@@ -3,9 +3,9 @@ import { updateAll } from 'app/redux/slices/gameSlice.ts';
 import { isSuccess } from 'app/redux/slices/savesSlice.ts';
 import { closeModal } from 'app/redux/slices/systemSlice.ts';
 import { useChoiceModal } from 'components/GModal';
-import { useNotification } from 'components/GNotification';
 import { useSpinner } from 'components/GSpinner';
 import useDisableUndo from 'hooks/useDisableUndo.ts';
+import { useNotification } from 'react-textgame-components';
 
 type UseOnLoadProps = {
     data: object;
@@ -16,10 +16,7 @@ const useOnLoad = ({ data }: UseOnLoadProps) => {
     const { showSpinner } = useSpinner();
     const succeed = () => dispatch(isSuccess());
     const loadFromSlot = () => dispatch(updateAll({ data: data }));
-    const { handleNotification: handleSuccessLoadNotification } = useNotification({
-        content: 'successfully loaded',
-        severity: 'success',
-    });
+    const { notify } = useNotification();
     const { disableUndo } = useDisableUndo();
 
     const { handleModalOpen: handleLoadGame } = useChoiceModal({
@@ -30,7 +27,7 @@ const useOnLoad = ({ data }: UseOnLoadProps) => {
                 showSpinner(true);
                 loadFromSlot();
                 succeed();
-                handleSuccessLoadNotification();
+                notify('successfully loaded');
                 showSpinner(false);
                 dispatch(closeModal());
                 disableUndo();

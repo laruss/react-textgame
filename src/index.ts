@@ -6,7 +6,6 @@ import variables from 'app/variables';
 import GameVariables, { initGameVariables, Variables } from 'app/variables';
 import GameWrapper from 'components/GameWrapper';
 import GModal, { useModal, useModalSize } from 'components/GModal';
-import { useNotification } from 'components/GNotification';
 import GPage from 'components/GPage';
 import GPassage, { PassageProps, PassageWidth } from 'components/GPassage';
 import GSideBar, { GSideBarBottom, GSideBarHeader, GSideButton } from 'components/GSideBar';
@@ -30,7 +29,6 @@ export {
     useGameChangesChecker,
     useModal,
     useModalSize,
-    useNotification,
     variables,
 };
 

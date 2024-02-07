@@ -1,7 +1,7 @@
 {
     "name": "react-textgame-engine",
     "private": false,
-    "version": "0.3.4",
+    "version": "0.3.5",
     "type": "module",
     "main": "dist/index.umd.js",
     "module": "dist/index.es.js",
@@ -52,7 +52,7 @@
         "react-full-screen": "^1.1.1",
         "react-markdown": "^9.0.1",
         "react-redux": "^9.0.4",
-        "react-textgame-components": "^0.2.5",
+        "react-textgame-components": "^0.3.2",
         "redux": "^5.0.0",
         "redux-persist": "^6.0.0",
         "redux-undo": "^1.1.0",

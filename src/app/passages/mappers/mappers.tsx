@@ -4,6 +4,7 @@ import GLink from 'components/GLink';
 import { GImage } from 'react-textgame-components';
 
 import { BodyComponent, HeaderComponent, Mapper, MapperFunction } from '../types.ts';
+import GoToComponent from './GoToComponent.tsx';
 
 const headerMapper = (content: HeaderComponent, index: string | number) => (
     <Typography key={index} variant={content.component}>{content.content}</Typography>
@@ -22,6 +23,7 @@ const mappers: Mapper = {
         return (mappers[component.component] as MapperFunction)(component, index);
     },
     custom: (content, index) => <div key={index}>{content.node}</div>,
+    goTo: (content, index) => <GoToComponent content={content} key={index} />,
     h1: headerMapper,
     h2: headerMapper,
     h3: headerMapper,

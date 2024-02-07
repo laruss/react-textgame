@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { ChoiceModalType, ModalProps, NotificationType, SystemState } from '../types';
+import { ChoiceModalType, ModalProps, SystemState } from '../types';
 
 const initialState: SystemState = {
     modal: {
@@ -14,14 +14,6 @@ const initialState: SystemState = {
         primary: null,
         secondary: null,
         choices: {},
-    },
-    notification: {
-        content: null,
-        anchorOrigin: {
-            vertical: 'top',
-            horizontal: 'right',
-        },
-        severity: 'success',
     },
     sideMenuIsOpened: null,
     isFullScreen: false,
@@ -53,12 +45,6 @@ const systemSlice = createSlice({
         closeChoiceModal: (state) => {
             state.choiceModal = { ...initialState.choiceModal };
         },
-        openNotification: (state, action: PayloadAction<NotificationType>) => {
-            state.notification = { ...state.notification, ...action.payload };
-        },
-        closeNotification: (state) => {
-            state.notification = { ...initialState.notification };
-        },
         setSideMenuIsOpened: (state, action: PayloadAction<boolean>) => {
             state.sideMenuIsOpened = action.payload;
         },
@@ -79,8 +65,6 @@ export const {
     closeChoiceModal,
     setModalCanBeClosedOnEscape,
     setModalSize,
-    openNotification,
-    closeNotification,
     setFullScreen,
     setSpinner,
 } = systemSlice.actions;
@@ -88,8 +72,6 @@ export const {
 export const selectModal = (state: { system: SystemState }) => state.system.modal;
 
 export const selectChoiceModal = (state: { system: SystemState }) => state.system.choiceModal;
-
-export const selectNotification = (state: { system: SystemState }) => state.system.notification;
 
 export const selectSideMenuIsOpened = (state: { system: SystemState }) => state.system.sideMenuIsOpened;
 
